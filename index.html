@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Github user search app" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono:regular,italic,700,700italic" rel="stylesheet" />
+    <link rel="shortcut icon" href="./assets/favicon-32x32.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css">
+    <title>Github user search app</title>
+  </head>
+
+  <body class="dark">
+     
+    <header>
+      <h1>devfinder</h1>
+      <button class="toggle">
+        <span class="toggle-state">
+          LIGHT
+        </span>
+        <svg id="dark-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="26"><path fill="currentColor" fill-rule="evenodd" d="M13 0c.81 0 1.603.074 2.373.216C10.593 1.199 7 5.43 7 10.5 7 16.299 11.701 21 17.5 21c2.996 0 5.7-1.255 7.613-3.268C23.22 22.572 18.51 26 13 26 5.82 26 0 20.18 0 13S5.82 0 13 0z"/></svg>
+
+        <!-- light  -->
+        <svg id='light-icon' xmlns="http://www.w3.org/2000/svg" width="26" height="26"><path fill="currentColor" fill-rule="evenodd" d="M13 21a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-5.657-2.343a1 1 0 010 1.414l-2.121 2.121a1 1 0 01-1.414-1.414l2.12-2.121a1 1 0 011.415 0zm12.728 0l2.121 2.121a1 1 0 01-1.414 1.414l-2.121-2.12a1 1 0 011.414-1.415zM13 8a5 5 0 110 10 5 5 0 010-10zm12 4a1 1 0 110 2h-3a1 1 0 110-2h3zM4 12a1 1 0 110 2H1a1 1 0 110-2h3zm18.192-8.192a1 1 0 010 1.414l-2.12 2.121a1 1 0 01-1.415-1.414l2.121-2.121a1 1 0 011.414 0zm-16.97 0l2.121 2.12A1 1 0 015.93 7.344L3.808 5.222a1 1 0 011.414-1.414zM13 0a1 1 0 011 1v3a1 1 0 11-2 0V1a1 1 0 011-1z"/></svg>
+      </button>
+      </button>
+    </header>
+    <main>  
+      <form class="search">
+        <div class="search-field">
+
+          <img src="./assets/icon-search.svg" class="search-icon" alt="Search icon" />
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search GitHub username..."
+            name="GitHub Username"
+            id="username"
+            autocomplete="off"
+          />
+        </div>
+        <!-- <p class="error" id="empty-field">Empty Field</p> -->
+        <button class="btn" type="submit">Search</button>
+      </form>
+      <section class="user-container">
+        <img src="./assets/image-user-placeholder.png" class="user-image user-image-desktop" alt="">
+        <div class="user-details">
+            <div class="user-header">
+              <img src="./assets/image-user-placeholder.png" class="user-image user-image-mobile" alt="">
+              <h2 id="user-name">The Octocat</h2>
+              <span class="user-id">@octocat</span>
+              <p class="user-joined">Joined 25 Jan 2011</p>
+            </div>
+            <div class="user-body">
+              <p class="user-bio">
+                User bio..
+              </p>
+              <ul class="user-actions">
+                <li class="user-action">
+                  <span>Repos</span>
+                  <span class="user-stat">8</span>
+                </li>
+                <li class="user-action">
+                  <span>Followers</span>
+                  <span class="user-stat">8</span>
+                </li>
+                <li class="user-action">
+                  <span>Following</span>
+                  <span class="user-stat">8</span>
+                </li>
+              </ul>
+              <ul class="user-social">
+                <li>
+                  <span class="user-icon"><img src="./assets/icon-location.svg" alt=""></span>
+                  <span class="user-social-name">India</span>
+                </li>
+                <li>
+                  <span class="user-icon"><img src="./assets/icon-twitter.svg" alt=""></span>
+                  <span class="user-social-name">NA</span>
+                </li>
+                <li>
+                  <span class="user-icon"><img src="./assets/icon-website.svg" alt=""></span>
+                  <span class="user-social-name">website</span>
+                </li>
+                <li>
+                  <span class="user-icon"><img src="./assets/icon-user-organization.svg" alt=""></span>
+                  <span class="user-social-name">India</span>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">SG</a>.
+    </footer>
+    <script src="./app.js"></script>
+  </body>
+</html>
