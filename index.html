@@ -8,13 +8,17 @@
     <link href="https://fonts.googleapis.com/css?family=Space+Mono:regular,italic,700,700italic" rel="stylesheet" />
     <link rel="shortcut icon" href="./assets/favicon-32x32.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <title>Github user search app</title>
   </head>
 
   <body class="dark">
      
     <header>
-      <h1>devfinder</h1>
+      <h1 class="animate__animated animate__zoomIn">devfinder</h1>
       <button class="toggle">
         <span class="toggle-state">
           LIGHT
@@ -40,59 +44,61 @@
             autocomplete="off"
           />
         </div>
-        <!-- <p class="error" id="empty-field">Empty Field</p> -->
+        <p class="error" id="empty-field">Empty Field!</p>
         <button class="btn" type="submit">Search</button>
       </form>
       <section class="user-container">
-        <img src="./assets/image-user-placeholder.png" class="user-image user-image-desktop" alt="">
-        <div class="user-details">
-            <div class="user-header">
-              <img src="./assets/image-user-placeholder.png" class="user-image user-image-mobile" alt="">
-              <h2 id="user-name">The Octocat</h2>
-              <span class="user-id">@octocat</span>
-              <p class="user-joined">Joined 25 Jan 2011</p>
-            </div>
-            <div class="user-body">
-              <p class="user-bio">
-                User bio..
-              </p>
-              <ul class="user-actions">
-                <li class="user-action">
-                  <span>Repos</span>
-                  <span class="user-stat">8</span>
-                </li>
-                <li class="user-action">
-                  <span>Followers</span>
-                  <span class="user-stat">8</span>
-                </li>
-                <li class="user-action">
-                  <span>Following</span>
-                  <span class="user-stat">8</span>
-                </li>
-              </ul>
-              <ul class="user-social">
-                <li>
-                  <span class="user-icon"><img src="./assets/icon-location.svg" alt=""></span>
-                  <span class="user-social-name">India</span>
-                </li>
-                <li>
-                  <span class="user-icon"><img src="./assets/icon-twitter.svg" alt=""></span>
-                  <span class="user-social-name">NA</span>
-                </li>
-                <li>
-                  <span class="user-icon"><img src="./assets/icon-website.svg" alt=""></span>
-                  <span class="user-social-name">website</span>
-                </li>
-                <li>
-                  <span class="user-icon"><img src="./assets/icon-user-organization.svg" alt=""></span>
-                  <span class="user-social-name">India</span>
-                </li>
-              </ul>
-            </div>
-        </div>
+       
       </section>
     </main>
-
+    <template id="user-details">
+      <img  class="user-image user-image-desktop animate__animated animate__zoomIn" alt="">
+      <div class="user-details">
+          <div class="user-header">
+            <img  class="user-image user-image-mobile animate__animated animate__zoomIn" alt="">
+            <h2 class="user-name textAnimation"></h2>
+            <span class="user-id textAnimation"></span>
+            <p class="user-joined textAnimation"></p>
+          </div>
+          <div class="user-body">
+            <p class="user-bio animate__animated animate__bounceIn">
+            
+            </p>
+            <ul class="user-actions">
+              <li class="user-action">
+                <span>Repos</span>
+                <span class="user-repo-stat animate__animated animate__zoomIn"></span>
+              </li>
+              <li class="user-action">
+                <span>Followers</span>
+                <span class="user-follower-stat animate__animated animate__zoomIn"></span>
+              </li>
+              <li class="user-action">
+                <span>Following</span>
+                <span class="user-following-stat animate__animated animate__zoomIn"></span>
+              </li>
+            </ul>
+            <ul class="user-social textAnimation">
+              <li>
+                <span class="user-icon"><img src="./assets/icon-location.svg" alt=""></span>
+                <span class="user-location"></span>
+              </li>
+              <li>
+                <span class="user-icon"><img src="./assets/icon-twitter.svg" alt=""></span>
+                <a class="user-twitter"></a>
+              </li>
+              <li>
+                <span class="user-icon"><img src="./assets/icon-website.svg" alt=""></span>
+                <a class="user-website">website</a>
+              </li>
+              <li>
+                <span class="user-icon"><img src="./assets/icon-user-organization.svg" alt=""></span>
+                <a class="user-organization">India</a>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </template>
     <footer class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a href="#">SG</a>.
