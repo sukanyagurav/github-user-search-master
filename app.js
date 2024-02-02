@@ -17,8 +17,8 @@ toggleTheme.addEventListener('click',(e)=>{
 
 form.addEventListener('submit',async function(e){
   e.preventDefault()
-  const formInput = document.querySelector('#username').value.trim()
-  if(formInput ===''){
+  const formInput = document.querySelector('#username')
+  if(formInput.value.trim() ===''){
     form.classList.add('show')
     form.classList.add('invalid')
     setTimeout(()=>{
@@ -28,7 +28,8 @@ form.addEventListener('submit',async function(e){
     return 
   }
   
-  await fetchData(formInput)
+  await fetchData(formInput.value.trim())
+  formInput.value=''
 })
 function render(data){
   const templateEle= document.importNode(template.content,true)
@@ -117,13 +118,18 @@ function render(data){
     userWebsite.innerText = modified
     userWebsite.href=data.blog
   }
-
   // oragnization
   const userOragnization=templateEle.querySelector('.user-organization')
+  
   if(!data.company || data.company.length<1){
     userOragnization.innerText ='Not Available'
     userOragnization.parentElement.classList.add('not-available')
   }else{
+    if(data.company.length >=10 ){
+      userOragnization.classList.add('small')
+    }else{
+      userOragnization.classList.remove('small')
+    }
     userOragnization.parentElement.classList.remove('not-available')
     userOragnization.innerText = data.company
     userOragnization.href=data.html_url

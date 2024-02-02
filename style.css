@@ -176,7 +176,8 @@ header h1{
     cursor: pointer;
 }
 .small{
-    font-size: 1rem;
+    --font-size:0.8rem;
+    font-size: var(--font-size);
 }
 /* user-container */
 .user-container{
@@ -308,7 +309,7 @@ li{
         right: 19%;
     }
     .user-container{
-        padding: 2rem;
+        padding: 2rem 1.3rem;
     }
     .user-joined{
         margin-left: auto;
